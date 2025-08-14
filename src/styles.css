@@ -6,7 +6,7 @@
   --accent: rgb(165, 150, 230);
   --danger: rgb(255, 110, 110);
   --border: rgb(68, 68, 68);
-  --shadow: rgba(0, 0, 0, 0.25);
+  --shadow: rgba(255, 255, 255, 0.25);
 }
 
 /* Light Mode - Custom Property Variables*/
@@ -14,21 +14,113 @@ body.light {
   --bg: rgb(230, 230, 230);
   --card: rgb(255, 255, 255);
   --text: rgb(45, 45, 45);
-  --accent: rgb(70, 40, 230);
+  --accent: rgb(91, 85, 125);
   --danger: rgb(217, 48, 37);
   --border: rgb(187, 187, 187);
   --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Base Style */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: background 0.25s, color 0.25s;
 }
 
+/* Content Container */
 .container {
   max-width: 480px;
-  margin: 48px, auto, 48px, auto;
-  padding: 0, 16px, 0, 16px;
+  margin: 48px auto;
+  padding: 0 16px 0 16px;
+}
+
+/* Heading */
+h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bolder;
+  text-shadow: 4px 4px 6px var(--shadow);
+}
+
+/* Form */
+form {
+  display: flex;
+  gap: 8px;
+  margin: 24px 0 24px 0;
+}
+
+input[type="text"] {
+  padding: 8px 12px 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 16px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 3px 3px 5px var(--shadow);
+}
+
+button[type="submit"] {
+  padding: 8px 12px 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: filter 0.5s;
+  box-shadow: 3px 3px 5px var(--shadow);
+}
+
+button[type="submit"]:hover {
+  filter: brightness(1.2);
+}
+
+/* Tasks */
+#task-list {
+  list-style: none;
+}
+
+#task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background: var(--surface);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+#task-list .left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+span.done {
+  text-decoration: line-through;
+  color: var(--border);
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--danger);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: var(--text);
 }
