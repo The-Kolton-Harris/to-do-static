@@ -1,4 +1,4 @@
-# [Go TO List | https://the-kolton-harris.github.io/to-do-static/src]
+# [Go TO List](https://the-kolton-harris.github.io/to-do-static/src)
 # Description
 
 A statically rendered to-do list site for storing contents in local storage.
